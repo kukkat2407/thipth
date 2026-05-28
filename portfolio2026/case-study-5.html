@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build a simple Wireframe Kit with Claude Code + Figma + Cursor - Pham Thi Ha Thi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <main>
+
+    <!-- Hero image - full bleed -->
+    <img
+      class="cs-hero-img"
+      src="./images/case-study-5/Cover_Article.jpg"
+      alt="Build a Wireframe Kit with Claude Code - cover"
+    >
+
+    <div class="container">
+
+      <!-- Project header -->
+      <div class="cs-header">
+        <a href="./index.html" class="cs-back-nav">← Back to home</a>
+        <p class="cs-eyebrow">Side Project · AI Tools</p>
+        <h1 class="cs-title">Build a simple Wireframe Kit with Claude Code + Figma + Cursor</h1>
+      </div>
+
+      <!-- ─── Intro ──────────────────────────────────────── -->
+      <div class="cs-section">
+        <p class="cs-p"><strong>Thử dành 2 ngày build nhanh một bộ Wireframe Kit bằng Claude Code, 1 Designer, 0 Front-end developer xem thế nào.</strong></p>
+
+        <p class="cs-p">Tranh thủ vài hôm rảnh, mình thử bào Claude Code xem có thể làm gì với nó. Mình lên nhanh ý tưởng build một bộ Wireframe Kit để tiện dùng trong công việc. Và vì sợ quên, nên mình viết bài này coi như note lại cách mình đã làm như nào :D</p>
+
+        <p class="cs-p">Để thực hiện ý tưởng này mình chủ yếu làm việc trên Claude Code và Figma, việc polish styling HTML/CSS chủ yếu dùng Cursor để tiết kiệm token :D Và sau 2 ngày, kết quả mình nhận được là một bộ Wireframe Kit cơ bản đúng style mong muốn và cho phép Claude Code dùng lại được trong các project và design khác nhau.</p>
+
+        <div class="cs-insight">
+          <p><em><strong>Lời nhắn nhỏ:</strong> Bài viết này chia sẻ nhanh về quá trình mình làm và những gì mình học được, không mang tính chất hướng dẫn, vì mình vẫn đang tự học và mày mò, hy vọng nhận thêm góp ý từ mọi người nhé!</em></p>
+        </div>
+      </div>
+
+      <!-- ─── 1. Setup ───────────────────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Setup Claude Code ↔ Figma</h2>
+        <p class="cs-p">Ở bước này mình đã follow các tutorial trên YouTube để setup. Bước này rất quan trọng, nó sẽ mở ra con đường 2-Way Claude Code ↔ Figma đi qua đi lại giữa 2 tool mượt mà nhất.</p>
+        <ul class="cs-ul">
+          <li>Design with Claude Code - The Designer's Guide: <a href="https://www.youtube.com/watch?v=JMQ0X_si144" target="_blank" rel="noopener"><strong>youtube.com/watch?v=JMQ0X_si144</strong></a></li>
+          <li>Two Way Claude Code + Figma in 10 minutes: <a href="https://www.youtube.com/watch?v=9Qs2KytMa64" target="_blank" rel="noopener"><strong>youtube.com/watch?v=9Qs2KytMa64</strong></a></li>
+          <li>Claude Skills: <a href="https://www.youtube.com/watch?v=Iup1WlUyj9M" target="_blank" rel="noopener"><strong>youtube.com/watch?v=Iup1WlUyj9M</strong></a></li>
+        </ul>
+      </div>
+
+      <!-- ─── 2. Local folder ────────────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Tạo local folder</h2>
+        <p class="cs-p">Việc tổ chức lưu trữ mọi thứ về một nơi theo mình rất quan trọng, khi cần tìm gì liên quan mình chỉ cần vào để tìm thôi, rất nhanh và tiện. Claude Code sẽ cần một local folder để store tất cả các files mà nó build được cho bạn. Hơn thế nữa, có thể duplicate hẳn local folder như này và reuse cho nhiều project khác.</p>
+      </div>
+
+      <!-- ─── 3. CLAUDE.md ───────────────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Viết file instruction "CLAUDE.md"</h2>
+        <p class="cs-p">Đây là bước mình đưa ra yêu cầu và cung cấp thông tin cơ bản để Claude Code hiểu mong muốn của mình. Cách mình viết khá đơn giản - tưởng tượng bạn đang muốn giao việc cho một junior/fresher thì như thế nào vậy đó. Thế nhưng cũng không nên sơ sài, vì bạn càng đưa nhiều thông tin thì Claude Code càng dễ get context và bớt đi chệch hướng hơn.</p>
+        <p class="cs-p">Ở bước này và xuyên suốt lúc làm, mình hay chat với Claude để hỏi và fix nhanh các vấn đề xảy ra.</p>
+        <img
+          class="cs-img"
+          src="./images/case-study-5/img_1.jpg"
+          alt="Writing CLAUDE.md instruction file"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- ─── 4. First prompt ────────────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Chiếc prompt đầu tiên trên Claude Code</h2>
+        <p class="cs-p">Khi bạn đã tạo ra một file instruction bài bản rồi thì việc viết prompt đầu tiên trên Claude Code nhẹ nhàng hơn rất nhiều. Mình bắt đầu bằng việc bắt nó get context từ file "CLAUDE.md" để double check xem nó hiểu đúng mong muốn của mình chưa.</p>
+        <img
+          class="cs-img"
+          src="./images/case-study-5/img_2.jpg"
+          alt="First prompt on Claude Code"
+          loading="lazy"
+        >
+        <p class="cs-p">Tiếp theo mình prompt cho nó build từng phần của bộ Wireframe Kit, bắt đầu từ token, styles, typography, components… Lúc này mình bắt đầu nhận được các file HTML/CSS liên quan trong local folder được tạo ra bởi Claude Code.</p>
+      </div>
+
+      <!-- ─── 5. Heavier tasks ───────────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Task nặng hơn, phức tạp hơn</h2>
+        <p class="cs-p">Sau khi hòm hòm được bộ styling, mình bắt đầu yêu cầu Claude Code build ra bộ style guide đầu tiên. Đây là lúc Claude Code đỉnh thực sự. Nó tự build cho mình một file style-guide.html hoàn chỉnh với layout khá chỉnh chu, thậm chí còn build sẵn cho mình một số component như buttons, inputs, labels mặc dù mình không hề mention trước đó.</p>
+        <img
+          class="cs-img"
+          src="./images/case-study-5/img_3.jpg"
+          alt="Claude Code builds the style guide"
+          loading="lazy"
+        >
+        <p class="cs-p">Sau đó mình yêu cầu Claude Code build bộ style guide ra Figma. Bản build đầu tiên mình nhận được đạt 60–70% expectation của mình. Đối với nhiều người, đây là bước Claude Code gây thất vọng nhất - vì một số hạn chế như không có auto layout, không tạo component, không apply token, text style… Nhưng 1st version thì làm sao hoàn hảo ngay được, thế nên mình khá hài lòng với những gì Claude Code build được ở bước đầu.</p>
+      </div>
+
+      <!-- ─── 6. Figma ───────────────────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Không thể xa rời Figma</h2>
+        <p class="cs-p">Tất nhiên rồi, mối quan hệ này mãi mãi bên nhau :D Vì Claude Code chưa thể build đúng ý 100% thế nên mình vẫn tự tay tút tát lại những điểm chưa ưng ý bằng Figma.</p>
+        <p class="cs-p">Sau đó mình tiếp tục bắt Claude Code update lại bộ styling (HTML/CSS) dựa trên những gì mình đã update trên Figma. Việc này được lặp đi lặp lại nhiều lần trong suốt quá trình làm cho đến khi build được bộ Wireframe Kit mà mình ưng ý.</p>
+      </div>
+
+      <!-- ─── 7. Cursor ─────────────────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Cursor giúp mình tiết kiệm token</h2>
+        <p class="cs-p">Vô tình mình mở một file CSS gen ra bởi Claude Code trên Cursor, thế là nó dẫn mình đến mảnh đất thật mới mẻ và đầy cuốn hút.</p>
+        <p class="cs-p">Lúc đầu chưa biết mình đã đốt rất nhiều token để nhờ Claude Code chỉnh sửa các dòng code như đổi color, đổi padding… Khi biết cách view và dùng Cursor edit, mọi thứ cực kỳ nhanh và tiện - mình hoàn toàn kiểm soát được việc polish các styling nhỏ mà không cần Claude Code hay Figma nữa.</p>
+        <img
+          class="cs-img"
+          src="./images/case-study-5/img_4.jpg"
+          alt="Using Cursor to polish CSS"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- ─── 8. Test ────────────────────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Test thử xem bộ Wireframe Kit có làm được việc không</h2>
+        <p class="cs-p">Ý tưởng ban đầu của mình là sẽ dùng bộ này để build nhanh wireframe, ít phải động tay động chân trên Figma, tất cả để Claude Code làm. Sau nhiều lần chỉnh sửa, chỉ dạy hết nước và khi đã ưng ý với mọi thứ, mình bắt đầu yêu cầu Claude Code build thử ra một vài màn hình mobile design. Mình khá kiệm lời ở bước này, thế nên Claude cũng mất tầm 4–5 phút để hoàn tất một screen. Chắc về sau nên prompt kỹ hơn - Claude Code sẽ hiểu nhanh và làm nhanh hơn. Nhưng sau tất cả mình vẫn thực sự hài lòng với những gì Claude Code build được.</p>
+        <img
+          class="cs-img"
+          src="./images/case-study-5/img_5.jpg"
+          alt="Wireframe Kit in action - screen 1"
+          loading="lazy"
+        >
+        <img
+          class="cs-img"
+          src="./images/case-study-5/img_6.jpg"
+          alt="Wireframe Kit in action - screen 2"
+          loading="lazy"
+        >
+        <p class="cs-p">Và đánh giá lại là một project thành công đúng không mọi người? Sau này muốn tạo nhanh wireframe cho bất kỳ feature nào, mình hoàn toàn có thể dùng cách này để có design đúng styling mình muốn. Quick and consistent!</p>
+      </div>
+
+      <!-- ─── Closing ────────────────────────────────────── -->
+      <div class="cs-section">
+        <p class="cs-p">Mình cũng đang mày mò cách dùng Claude Code build prototype view trên trình duyệt (HTML/CSS), mong sẽ được connect thêm với mọi người để cùng học hỏi.</p>
+        <p class="cs-p">Cám ơn mọi người đã dành thời gian đọc bài viết này nhé ❤️</p>
+      </div>
+
+      <!-- ─── More case studies ────────────────────────────── -->
+      <div class="cs-more">
+        <p class="cs-more-label">More case studies</p>
+        <div class="cs-more-grid">
+          <a href="./case-study-1.html" class="cs-more-card">
+            <img src="./images/case-study-1/Cover_Search.jpg" alt="Search & filter tool">
+            <div class="cs-more-card-body">
+              <p class="cs-more-card-eyebrow">Case Study · Real Estate</p>
+              <p class="cs-more-card-title">Solve user pain points on search &amp; filter tool</p>
+            </div>
+          </a>
+          <a href="./case-study-2.html" class="cs-more-card">
+            <img src="./images/case-study-2/Cover_VL.jpg" alt="Increase user trust on the marketplace">
+            <div class="cs-more-card-body">
+              <p class="cs-more-card-eyebrow">Case Study · Real Estate</p>
+              <p class="cs-more-card-title">Increase user trust on the marketplace</p>
+            </div>
+          </a>
+          <a href="./case-study-3.html" class="cs-more-card">
+            <img src="./images/case-study-3/Cover_Map.jpg" alt="Map view">
+            <div class="cs-more-card-body">
+              <p class="cs-more-card-eyebrow">Case Study · Real Estate</p>
+              <p class="cs-more-card-title">Map view - Bring new experiences to home seekers</p>
+            </div>
+          </a>
+          <a href="./case-study-4.html" class="cs-more-card">
+            <img src="./images/case-study-4/Cover_Others.jpg" alt="Highlighted works">
+            <div class="cs-more-card-body">
+              <p class="cs-more-card-eyebrow">Highlighted Works</p>
+              <p class="cs-more-card-title">Selected projects across B2C and B2B</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="./index.html" class="cs-back-link">← Back to home</a>
+
+      <div class="contact-card">
+        <p class="contact-heading">Happy to connect &amp; build products together</p>
+        <div class="contact-rows">
+          <p class="contact-row">Phone: <a href="tel:+84367443501">036 744 3501</a></p>
+          <p class="contact-row">Email: <a href="mailto:hapham270891@gmail.com">hapham270891@gmail.com</a></p>
+        </div>
+        <div class="contact-social">
+          <a href="https://www.linkedin.com/in/thipth" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.behance.net/thipth" target="_blank" rel="noopener">Behance</a>
+          <a href="https://dribbble.com/thipham" target="_blank" rel="noopener">Dribbble</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-copy">Designed in Claude Code &amp; Cursor by Thi Pham</span>
+      <div class="footer-contact">
+        <a href="tel:+84367443501"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>036 744 3501</a>
+        <a href="mailto:hapham270891@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>hapham270891@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"/></svg>
+  </button>
+  <script src="./main.js"></script>
+</body>
+</html>
