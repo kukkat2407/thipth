@@ -40,7 +40,12 @@ body {
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-slate-blue);
-  background: var(--color-ghost-white);
+  background-color: var(--color-ash-gray);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 360px),
+    radial-gradient(circle, #d0d0d0 1px, transparent 1px);
+  background-size: 100% 100%, 20px 20px;
+  background-repeat: no-repeat, repeat;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -102,7 +107,7 @@ main {
 /* ─── Hero ───────────────────────────────────────────────────── */
 .hero {
   padding-top: 0;
-  margin-top: -64px;
+  margin-top: 72px;
 }
 
 .hero-avatar {
@@ -269,7 +274,6 @@ main {
 
 .experience-item {
   padding: 24px 0;
-  border-bottom: 1px solid var(--color-border-gray);
 }
 
 .experience-item:first-child {
@@ -410,26 +414,28 @@ main {
 
 .contact-social {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-social a {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: -0.14px;
-  color: rgba(255, 255, 255, 0.6);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 2px;
-  transition: border-color 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: color 0.15s;
+}
+
+.contact-social a svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
 .contact-social a:hover {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* ─── Site Footer ────────────────────────────────────────────── */
@@ -440,40 +446,13 @@ main {
 
 .site-footer .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-copy {
   font-size: 12px;
   color: var(--color-light-gray);
-}
-
-.footer-contact {
-  font-size: 12px;
-  color: var(--color-light-gray);
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-contact a {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--color-light-gray);
-  transition: color 0.15s;
-}
-
-.footer-contact a svg {
-  flex-shrink: 0;
-  opacity: 0.7;
-}
-
-.footer-contact a:hover {
-  color: var(--color-graphite);
+  text-align: center;
 }
 
 /* ─── Desktop ────────────────────────────────────────────────── */
@@ -984,6 +963,68 @@ main {
 
 .cs-back-link:hover {
   color: var(--color-graphite);
+}
+
+/* ─── Logo Marquee ───────────────────────────────────────────── */
+.marquee-heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-light-gray);
+  text-align: center;
+  margin-top: 72px;
+  margin-bottom: 4px;
+}
+.marquee-wrap {
+  padding: 24px 0;
+  overflow: hidden;
+  margin: 0 -24px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-inner:hover {
+  animation-play-state: paused;
+}
+
+.marquee-inner--reverse {
+  animation-direction: reverse;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+  flex-shrink: 0;
+}
+
+.marquee-logo {
+  height: 48px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  opacity: 0.45;
+  filter: grayscale(100%);
+  transition: opacity 0.2s, filter 0.2s;
+  flex-shrink: 0;
+}
+
+.marquee-logo:hover {
+  opacity: 0.9;
+  filter: grayscale(0%);
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 /* ─── Back to top ────────────────────────────────────────────── */
