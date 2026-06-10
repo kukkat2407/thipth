@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Build a simple Wireframe Kit with Claude Code + Figma + Cursor - Pham Thi Ha Thi</title>
+  <title>Redesign Vikki App Home Screen - Pham Thi Ha Thi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
     <!-- Hero image - full bleed -->
     <img
       class="cs-hero-img"
-      src="./images/case-study-5/Cover_Article.jpg"
-      alt="Build a Wireframe Kit with Claude Code - cover"
+      src="./images/case-study-6/Cover_Vikki.jpg"
+      alt="Vikki App Home Screen Redesign - cover"
     >
 
     <div class="container">
@@ -26,125 +26,182 @@
       <!-- Project header -->
       <div class="cs-header">
         <a href="./index.html" class="cs-back-nav">← Back to home</a>
-        <p class="cs-eyebrow">Side Project · AI Tools</p>
-        <h1 class="cs-title">Build a simple Wireframe Kit with Claude Code + Figma + Cursor</h1>
+        <p class="cs-eyebrow">Side Project · Fintech</p>
+        <h1 class="cs-title">Redesign Vikki App Home Screen</h1>
       </div>
 
-      <!-- ─── Intro ──────────────────────────────────────── -->
+      <!-- ─── Overview ──────────────────────────────────── -->
       <div class="cs-section">
-        <p class="cs-p"><strong>Thử dành 2 ngày build nhanh một bộ Wireframe Kit bằng Claude Code, 1 Designer, 0 Front-end developer xem thế nào.</strong></p>
+        <h2 class="cs-h1">Overview</h2>
 
-        <p class="cs-p">Tranh thủ vài hôm rảnh, mình thử bào Claude Code xem có thể làm gì với nó. Mình lên nhanh ý tưởng build một bộ Wireframe Kit để tiện dùng trong công việc. Và vì sợ quên, nên mình viết bài này coi như note lại cách mình đã làm như nào :D</p>
-
-        <p class="cs-p">Để thực hiện ý tưởng này mình chủ yếu làm việc trên Claude Code và Figma, việc polish styling HTML/CSS chủ yếu dùng Cursor để tiết kiệm token :D Và sau 2 ngày, kết quả mình nhận được là một bộ Wireframe Kit cơ bản đúng style mong muốn và cho phép Claude Code dùng lại được trong các project và design khác nhau.</p>
-
-        <div class="cs-insight">
-          <p><em><strong>Lời nhắn nhỏ:</strong> Bài viết này chia sẻ nhanh về quá trình mình làm và những gì mình học được, không mang tính chất hướng dẫn, vì mình vẫn đang tự học và mày mò, hy vọng nhận thêm góp ý từ mọi người nhé!</em></p>
-        </div>
+        <table class="cs-overview">
+          <tbody>
+            <tr>
+              <th>Project</th>
+              <td>Redesign home screen (Design concept)</td>
+            </tr>
+            <tr>
+              <th>My role</th>
+              <td>Product Designer (Owned end-to-end from research to design solutions)</td>
+            </tr>
+            <tr>
+              <th>Targeted user</th>
+              <td>Gen Z users</td>
+            </tr>
+            <tr>
+              <th>Timeline</th>
+              <td>May 2026</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <!-- ─── 1. Setup ───────────────────────────────────── -->
+      <!-- ─── Problem statement ─────────────────────────── -->
       <div class="cs-section">
-        <h2 class="cs-h2">Setup Claude Code ↔ Figma</h2>
-        <p class="cs-p">Ở bước này mình đã follow các tutorial trên YouTube để setup. Bước này rất quan trọng, nó sẽ mở ra con đường 2-Way Claude Code ↔ Figma đi qua đi lại giữa 2 tool mượt mà nhất.</p>
+        <h2 class="cs-h1">Problem statement</h2>
+
+        <p class="cs-p">Gen Z users in Ho Chi Minh and Ha Noi are struggling to navigate in Vikki's home screen because the key features such as: money transfer, flight booking, and transport ticketing are buried beneath many marketing and promotion content. This causes users to feel lost, reduces engagement with core financial features.</p>
+
+        <img
+          class="cs-img"
+          src="./images/case-study-6/img-persona.png"
+          alt="User persona - Gen Z Vikki user"
+          loading="lazy"
+        >
+
+        <blockquote class="cs-blockquote">
+          <em>"Gen Z users open Vikki app with a specific task in mind, not to browse. The home screen must be a task launcher first, a financial dashboard second, and a discovery surface third."</em>
+        </blockquote>
+
+        <p class="cs-p">User pain points:</p>
         <ul class="cs-ul">
-          <li>Design with Claude Code - The Designer's Guide: <a href="https://www.youtube.com/watch?v=JMQ0X_si144" target="_blank" rel="noopener"><strong>youtube.com/watch?v=JMQ0X_si144</strong></a></li>
-          <li>Two Way Claude Code + Figma in 10 minutes: <a href="https://www.youtube.com/watch?v=9Qs2KytMa64" target="_blank" rel="noopener"><strong>youtube.com/watch?v=9Qs2KytMa64</strong></a></li>
-          <li>Claude Skills: <a href="https://www.youtube.com/watch?v=Iup1WlUyj9M" target="_blank" rel="noopener"><strong>youtube.com/watch?v=Iup1WlUyj9M</strong></a></li>
+          <li>Users cannot quickly locate to features they usually use, such as: bus ticket, flights, top-up data 4G/5G</li>
+          <li>Promotional banners dominate the screen and are irrelevant to Gen Z</li>
+          <li>High information density causes cognitive overload on first view</li>
+          <li>Layout hierarchy does not reflect actual user task priority</li>
+        </ul>
+
+        <p class="cs-p">If we redesign the home screen with a task-first hierarchy and reduced promotional noise, we expect:</p>
+        <ul class="cs-ul">
+          <li>Higher conversion rate on key features</li>
+          <li>Stronger Gen Z acquisition and retention</li>
         </ul>
       </div>
 
-      <!-- ─── 2. Local folder ────────────────────────────── -->
+      <!-- ─── Process ───────────────────────────────────── -->
       <div class="cs-section">
-        <h2 class="cs-h2">Tạo local folder</h2>
-        <p class="cs-p">Việc tổ chức lưu trữ mọi thứ về một nơi theo mình rất quan trọng, khi cần tìm gì liên quan mình chỉ cần vào để tìm thôi, rất nhanh và tiện. Claude Code sẽ cần một local folder để store tất cả các files mà nó build được cho bạn. Hơn thế nữa, có thể duplicate hẳn local folder như này và reuse cho nhiều project khác.</p>
-      </div>
+        <h2 class="cs-h1">Process</h2>
 
-      <!-- ─── 3. CLAUDE.md ───────────────────────────────── -->
-      <div class="cs-section">
-        <h2 class="cs-h2">Viết file instruction "CLAUDE.md"</h2>
-        <p class="cs-p">Đây là bước mình đưa ra yêu cầu và cung cấp thông tin cơ bản để Claude Code hiểu mong muốn của mình. Cách mình viết khá đơn giản - tưởng tượng bạn đang muốn giao việc cho một junior/fresher thì như thế nào vậy đó. Thế nhưng cũng không nên sơ sài, vì bạn càng đưa nhiều thông tin thì Claude Code càng dễ get context và bớt đi chệch hướng hơn.</p>
-        <p class="cs-p">Ở bước này và xuyên suốt lúc làm, mình hay chat với Claude để hỏi và fix nhanh các vấn đề xảy ra.</p>
+        <!-- Research -->
+        <h3 class="cs-h2">Research</h3>
+
+        <p class="cs-p">Some key insights that were gathered from both user interviews (primary research) and published research reports from the banking and finance market (secondary research) tell us what and how Gen Z users really do in a banking app.</p>
+
         <img
           class="cs-img"
-          src="./images/case-study-5/img_1.jpg"
-          alt="Writing CLAUDE.md instruction file"
+          src="./images/case-study-6/img-research.jpg"
+          alt="Research insights - Gen Z banking behavior"
           loading="lazy"
         >
-      </div>
 
-      <!-- ─── 4. First prompt ────────────────────────────── -->
-      <div class="cs-section">
-        <h2 class="cs-h2">Chiếc prompt đầu tiên trên Claude Code</h2>
-        <p class="cs-p">Khi bạn đã tạo ra một file instruction bài bản rồi thì việc viết prompt đầu tiên trên Claude Code nhẹ nhàng hơn rất nhiều. Mình bắt đầu bằng việc bắt nó get context từ file "CLAUDE.md" để double check xem nó hiểu đúng mong muốn của mình chưa.</p>
+        <p class="cs-p"><em>Note: I applied Claude to accelerate my research stage, including 05 simulated user interviewing, and documenting research outputs.</em></p>
+
+        <!-- Design solution -->
+        <h3 class="cs-h2">Design solution</h3>
+
+        <p class="cs-p"><strong>Design principles</strong></p>
+        <p class="cs-p">Based on the problem statement and research insights, I published 5 principles for the design concept:</p>
+
+        <ol class="cs-ol">
+          <li>Task first, always - critical actions in one tap, above the fold</li>
+          <li>Financial clarity at a glance - balance is the hero, not promotions</li>
+          <li>One consistent design language - unified icons, typeface, color, and spacing</li>
+          <li>Progressive disclosure, complexity revealed by scroll</li>
+          <li>Clear UX writing</li>
+        </ol>
+
+        <p class="cs-p"><strong>Layout hierarchy</strong></p>
+        <p class="cs-p">Over 60% of the current layout is marketing content, which makes the home screen overwhelmed and distracts users, they can not quickly access the core financial features.</br>
+          In the new layout, all core financial features (Zone 1-5) are sorted above the marketing content (Zone 6) that focus on user tasks and reduces promotion banner noise.</p>
+
         <img
           class="cs-img"
-          src="./images/case-study-5/img_2.jpg"
-          alt="First prompt on Claude Code"
+          src="./images/case-study-6/img-layout-hierarchy.jpg"
+          alt="Layout hierarchy analysis - before vs after"
           loading="lazy"
         >
-        <p class="cs-p">Tiếp theo mình prompt cho nó build từng phần của bộ Wireframe Kit, bắt đầu từ token, styles, typography, components… Lúc này mình bắt đầu nhận được các file HTML/CSS liên quan trong local folder được tạo ra bởi Claude Code.</p>
-      </div>
 
-      <!-- ─── 5. Heavier tasks ───────────────────────────── -->
-      <div class="cs-section">
-        <h2 class="cs-h2">Task nặng hơn, phức tạp hơn</h2>
-        <p class="cs-p">Sau khi hòm hòm được bộ styling, mình bắt đầu yêu cầu Claude Code build ra bộ style guide đầu tiên. Đây là lúc Claude Code đỉnh thực sự. Nó tự build cho mình một file style-guide.html hoàn chỉnh với layout khá chỉnh chu, thậm chí còn build sẵn cho mình một số component như buttons, inputs, labels mặc dù mình không hề mention trước đó.</p>
+        <p class="cs-p"><strong>New design concept</strong></p>
+        <p class="cs-p">Back to Gia An, now in the new design concept, she can quick check her account balance, transfer money to her loved coffee shop at school's canteen, even scan QR payment, and topup 4G/5G data.</p>
+
         <img
           class="cs-img"
-          src="./images/case-study-5/img_3.jpg"
-          alt="Claude Code builds the style guide"
+          src="./images/case-study-6/img-new-design.jpg"
+          alt="New Vikki home screen design concept"
           loading="lazy"
         >
-        <p class="cs-p">Sau đó mình yêu cầu Claude Code build bộ style guide ra Figma. Bản build đầu tiên mình nhận được đạt 60–70% expectation của mình. Đối với nhiều người, đây là bước Claude Code gây thất vọng nhất - vì một số hạn chế như không có auto layout, không tạo component, không apply token, text style… Nhưng 1st version thì làm sao hoàn hảo ngay được, thế nên mình khá hài lòng với những gì Claude Code build được ở bước đầu.</p>
-      </div>
 
-      <!-- ─── 6. Figma ───────────────────────────────────── -->
-      <div class="cs-section">
-        <h2 class="cs-h2">Không thể xa rời Figma</h2>
-        <p class="cs-p">Tất nhiên rồi, mối quan hệ này mãi mãi bên nhau :D Vì Claude Code chưa thể build đúng ý 100% thế nên mình vẫn tự tay tút tát lại những điểm chưa ưng ý bằng Figma.</p>
-        <p class="cs-p">Sau đó mình tiếp tục bắt Claude Code update lại bộ styling (HTML/CSS) dựa trên những gì mình đã update trên Figma. Việc này được lặp đi lặp lại nhiều lần trong suốt quá trình làm cho đến khi build được bộ Wireframe Kit mà mình ưng ý.</p>
-      </div>
-
-      <!-- ─── 7. Cursor ─────────────────────────────────── -->
-      <div class="cs-section">
-        <h2 class="cs-h2">Cursor giúp mình tiết kiệm token</h2>
-        <p class="cs-p">Vô tình mình mở một file CSS gen ra bởi Claude Code trên Cursor, thế là nó dẫn mình đến mảnh đất thật mới mẻ và đầy cuốn hút.</p>
-        <p class="cs-p">Lúc đầu chưa biết mình đã đốt rất nhiều token để nhờ Claude Code chỉnh sửa các dòng code như đổi color, đổi padding… Khi biết cách view và dùng Cursor edit, mọi thứ cực kỳ nhanh và tiện - mình hoàn toàn kiểm soát được việc polish các styling nhỏ mà không cần Claude Code hay Figma nữa.</p>
         <img
           class="cs-img"
-          src="./images/case-study-5/img_4.jpg"
-          alt="Using Cursor to polish CSS"
+          src="./images/case-study-6/img-new-design-annotation-1.jpg"
+          alt="Design annotation 1 - task-first layout"
           loading="lazy"
         >
-      </div>
 
-      <!-- ─── 8. Test ────────────────────────────────────── -->
-      <div class="cs-section">
-        <h2 class="cs-h2">Test thử xem bộ Wireframe Kit có làm được việc không</h2>
-        <p class="cs-p">Ý tưởng ban đầu của mình là sẽ dùng bộ này để build nhanh wireframe, ít phải động tay động chân trên Figma, tất cả để Claude Code làm. Sau nhiều lần chỉnh sửa, chỉ dạy hết nước và khi đã ưng ý với mọi thứ, mình bắt đầu yêu cầu Claude Code build thử ra một vài màn hình mobile design. Mình khá kiệm lời ở bước này, thế nên Claude cũng mất tầm 4–5 phút để hoàn tất một screen. Chắc về sau nên prompt kỹ hơn - Claude Code sẽ hiểu nhanh và làm nhanh hơn. Nhưng sau tất cả mình vẫn thực sự hài lòng với những gì Claude Code build được.</p>
+        <p class="cs-p">The personalization optimizes user experience by showing content based on the user segments and behaviors.</p>
+
         <img
           class="cs-img"
-          src="./images/case-study-5/img_5.jpg"
-          alt="Wireframe Kit in action - screen 1"
+          src="./images/case-study-6/img-new-design-annotation-2.jpg"
+          alt="Design annotation 2 - personalization"
           loading="lazy"
         >
+
+        <p class="cs-p">Moreover, the new design concept helps users quick overview their finance: total income, total expense, transaction history, saving progress and more.</p>
+
         <img
           class="cs-img"
-          src="./images/case-study-5/img_6.jpg"
-          alt="Wireframe Kit in action - screen 2"
+          src="./images/case-study-6/img-new-design-annotation-3.jpg"
+          alt="Design annotation 3 - financial overview"
           loading="lazy"
         >
-        <p class="cs-p">Và đánh giá lại là một project thành công đúng không mọi người? Sau này muốn tạo nhanh wireframe cho bất kỳ feature nào, mình hoàn toàn có thể dùng cách này để có design đúng styling mình muốn. Quick and consistent!</p>
+
+        <p class="cs-p">The marketing content is less prioritized by moving below the core financial features. Users can also explore more campaigns, promotions, banking services on tab Explore.</p>
+
+        <img
+          class="cs-img"
+          src="./images/case-study-6/img-new-design-annotation-4.jpg"
+          alt="Design annotation 4 - deprioritized marketing content"
+          loading="lazy"
+        >
+
+        <!-- Risk & Trade off -->
+        <h3 class="cs-h2">Risk &amp; Trade off</h3>
+
+        <ol class="cs-ol">
+          <li>The new layout hierarchy with less promotion banners would negatively impact some promotion campaigns adoption. We might consider to build a better method for displaying banners. Measure data before and after carefully.</li>
+          <li>Returning users would take time to adopt new UI. We might have a user onboarding to guide both new and returning users.</li>
+          <li>Personalization would bring better experience for users but it won't fit to all. Focus on the group of primary users but make sure it won't bring bad impact to others.</li>
+        </ol>
       </div>
 
-      <!-- ─── Closing ────────────────────────────────────── -->
+      <!-- ─── Pre-define next actions ───────────────────── -->
       <div class="cs-section">
-        <p class="cs-p">Mình cũng đang mày mò cách dùng Claude Code build prototype view trên trình duyệt (HTML/CSS), mong sẽ được connect thêm với mọi người để cùng học hỏi.</p>
-        <p class="cs-p">Cám ơn mọi người đã dành thời gian đọc bài viết này nhé ❤️</p>
+        <h2 class="cs-h1">Pre-define next actions</h2>
+
+        <ol class="cs-ol">
+          <li>Conduct usability testing on primary users, try to validate design concept, and gather user feedback. A mass survey should be considered to collect quantitative insight.</li>
+          <li>Get back to the team and stakeholders with some research key insights and action items. Enhance the design and review with team. Loop this process until we have the final design ready for development.</li>
+          <li>Run experiment with small % of end-users then watch out the performance. Open for 5% of users then increase to 10 - 50%. Watch out and measure early data (conversion and retention) from end-users.</li>
+          <li>Review the result after 15-30 days of experiment with all stakeholders.</li>
+          <li>Define next items to improve or fix, if needed, before open to 100% of users.</li>
+        </ol>
       </div>
 
-      <!-- ─── More case studies ────────────────────────────── -->
+      <!-- Disclaimer -->
+      <p class="cs-disclaimer" style="margin-top: 56px;">✽ ✽ ✽ &nbsp;Some information and data in this case study have been modified for privacy</p>
+
+      <!-- ─── More case studies ──────────────────────────── -->
       <div class="cs-more">
         <p class="cs-more-label">More case studies</p>
         <div class="cs-more-grid">
@@ -169,11 +226,11 @@
               <p class="cs-more-card-title">Map view - Bring new experiences to home seekers</p>
             </div>
           </a>
-          <a href="./case-study-6.html" class="cs-more-card">
-            <img src="./images/case-study-6/Cover_Vikki.jpg" alt="Redesign Vikki App Home Screen">
+          <a href="./case-study-5.html" class="cs-more-card">
+            <img src="./images/case-study-5/Cover_Article.jpg" alt="Build a simple Wireframe Kit with Claude Code + Figma + Cursor">
             <div class="cs-more-card-body">
-              <p class="cs-more-card-eyebrow">Side Project · Fintech</p>
-              <p class="cs-more-card-title">Redesign Vikki App Home Screen</p>
+              <p class="cs-more-card-eyebrow">Side Project · AI Tools</p>
+              <p class="cs-more-card-title">Build a simple Wireframe Kit with Claude Code + Figma + Cursor</p>
             </div>
           </a>
         </div>

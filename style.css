@@ -642,6 +642,18 @@ main {
   font-weight: 700;
 }
 
+.cs-blockquote {
+  border-left: 3px solid var(--color-graphite);
+  padding: 12px 0 12px 20px;
+  margin: 24px 0;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: -0.2px;
+  color: var(--color-graphite);
+}
+
 /* Images within content */
 .cs-img {
   width: 100%;
