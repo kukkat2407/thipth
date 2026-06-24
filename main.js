@@ -1,3 +1,30 @@
+// Theme toggle — persists across pages via localStorage
+(function () {
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme') || 'dark';
+  root.setAttribute('data-theme', saved);
+
+  const buttons = document.querySelectorAll('.theme-opt');
+  if (!buttons.length) return;
+
+  function syncActive() {
+    const current = root.getAttribute('data-theme') || 'light';
+    buttons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.themeVal === current);
+    });
+  }
+
+  syncActive();
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      root.setAttribute('data-theme', btn.dataset.themeVal);
+      localStorage.setItem('theme', btn.dataset.themeVal);
+      syncActive();
+    });
+  });
+}());
+
 // Back-to-top button: show after scrolling 200px, click scrolls to top
 const backToTopBtn = document.querySelector('.back-to-top');
 if (backToTopBtn) {
@@ -52,7 +79,7 @@ document.querySelectorAll('.project-card').forEach((card, i) => {
 
 // ─── Lightbox ────────────────────────────────────────────────
 (function () {
-  const targets = document.querySelectorAll('.cs-section img');
+  const targets = document.querySelectorAll('.cs-section img, .cs-hero-img');
   if (!targets.length) return;
 
   const overlay = document.createElement('div');
