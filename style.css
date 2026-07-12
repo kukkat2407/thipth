@@ -252,8 +252,21 @@ main {
 }
 
 /* ─── Skills ─────────────────────────────────────────────────── */
-.skills-image {
-  width: 100%;
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chip {
+  background: var(--color-ghost-white);
+  border: 1px solid var(--color-border-gray);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-size: 16px;
+  color: var(--color-graphite);
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 /* ─── Toolbox ────────────────────────────────────────────────── */
@@ -356,7 +369,6 @@ main {
   content: "–";
   position: absolute;
   left: 0;
-  color: var(--color-border-gray);
 }
 
 /* ─── Simple Sections (edu / certs / awards) ─────────────────── */
