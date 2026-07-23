@@ -1,5 +1,5 @@
 /* ─── Fonts ──────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* ─── Tokens ─────────────────────────────────────────────────── */
 :root {
@@ -12,13 +12,25 @@
   --color-border-gray: #e5e7eb;
   --color-rocket-red: #fc4a2b;
 
-  --font: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font:         'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
   --radius-full: 9999px;
 
   --shadow-card: rgba(0,0,0,0.08) 0px 4px 12px, rgba(75,85,99,0.15) 0px 0px 0px 1px;
+
+  /* ─── Type scale ─────────────────────────────────────────── */
+  --fs-eyebrow:      12px;
+  --fs-xs:           14px;
+  --fs-sm:           16px;
+  --fs-body:         17px;
+  --fs-lg:           20px;
+  --fs-h2:           clamp(20px, 5.5vw, 26px);
+  --fs-h1:           clamp(26px, 7.5vw, 36px);
+  --fs-hero-mobile:  clamp(36px, 11vw, 48px);
+  --fs-hero-desktop: clamp(48px, 8vw, 64px);
 }
 
 /* ─── Dark theme ──────────────────────────────────────────────── */
@@ -61,7 +73,7 @@ html {
 
 body {
   font-family: var(--font);
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-slate-blue);
@@ -97,7 +109,7 @@ ul {
 /* ─── Layout ─────────────────────────────────────────────────── */
 .container {
   width: 100%;
-  max-width: 720px;
+  max-width: 824px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -113,10 +125,11 @@ main {
 }
 
 .section-label {
-  font-size: 32px;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
   font-weight: 700;
   letter-spacing: -0.48px;
-  line-height: 1.4;
+  line-height: 1.15;
   color: var(--color-graphite);
   margin-bottom: 20px;
 }
@@ -160,8 +173,9 @@ main {
 }
 
 .hero-name {
-  font-size: 42px;
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: var(--fs-hero-mobile);
+  font-weight: 700;
   letter-spacing: -1.47px;
   line-height: 1;
   color: var(--color-graphite);
@@ -170,7 +184,7 @@ main {
 }
 
 .hero-role {
-  font-size: 18px;
+  font-size: var(--fs-lg);
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: -0.14px;
@@ -182,7 +196,7 @@ main {
   border-left: 3px solid var(--color-graphite);
   padding-left: 16px;
   margin: 0 0 24px;
-  font-size: 18px;
+  font-size: var(--fs-lg);
   font-weight: 600;
   font-style: italic;
   line-height: 1.5;
@@ -191,7 +205,7 @@ main {
 }
 
 .hero-bio {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-slate-blue);
@@ -235,7 +249,7 @@ main {
 }
 
 .project-card-eyebrow {
-  font-size: 11px;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -244,7 +258,7 @@ main {
 }
 
 .project-card-title {
-  font-size: 16px;
+  font-size: var(--fs-body);
   font-weight: 600;
   letter-spacing: -0.14px;
   line-height: 1.6;
@@ -263,7 +277,7 @@ main {
   border: 1px solid var(--color-border-gray);
   border-radius: var(--radius-full);
   padding: 8px 16px;
-  font-size: 16px;
+  font-size: var(--fs-body);
   color: var(--color-graphite);
   line-height: 1.4;
   white-space: nowrap;
@@ -304,7 +318,7 @@ main {
 }
 
 .tool-name {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-graphite);
@@ -326,7 +340,7 @@ main {
 }
 
 .experience-period {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-light-gray);
@@ -334,7 +348,7 @@ main {
 }
 
 .experience-role {
-  font-size: 18px;
+  font-size: var(--fs-lg);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.36px;
@@ -343,7 +357,7 @@ main {
 }
 
 .experience-company {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-rocket-red);
@@ -357,7 +371,7 @@ main {
 }
 
 .experience-bullets li {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-slate-blue);
@@ -390,7 +404,7 @@ main {
 }
 
 .simple-list-name {
-  font-size: 16px;
+  font-size: var(--fs-body);
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: -0.14px;
@@ -398,7 +412,7 @@ main {
 }
 
 .simple-list-detail {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-light-gray);
@@ -424,10 +438,11 @@ main {
 }
 
 .contact-heading {
-  font-size: 32px;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
   font-weight: 700;
   letter-spacing: -0.48px;
-  line-height: 1.4;
+  line-height: 1.15;
   color: #ffffff;
   margin-bottom: 20px;
 }
@@ -440,7 +455,7 @@ main {
 }
 
 .contact-row {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: rgba(255, 255, 255, 0.5);
@@ -496,7 +511,7 @@ main {
 }
 
 .footer-copy {
-  font-size: 12px;
+  font-size: var(--fs-xs);
   color: var(--color-light-gray);
 }
 
@@ -516,7 +531,7 @@ main {
   border: 1px solid transparent;
   border-radius: 7px;
   font-family: var(--font);
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: 600;
   cursor: pointer;
   background: transparent;
@@ -536,7 +551,7 @@ main {
 /* ─── Desktop ────────────────────────────────────────────────── */
 @media (min-width: 768px) {
   .hero-name {
-    font-size: 56px;
+    font-size: var(--fs-hero-desktop);
   }
 
   .projects-grid {
@@ -554,7 +569,7 @@ main {
 
   .experience-item {
     display: grid;
-    grid-template-columns: 164px 1fr;
+    grid-template-columns: 188px 1fr;
     gap: 40px;
     align-items: start;
   }
@@ -583,7 +598,7 @@ main {
 .cs-back-nav {
   display: inline-block;
   margin-bottom: 40px;
-  font-size: 14px;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--color-slate-blue);
   text-decoration: underline;
@@ -612,7 +627,7 @@ main {
 }
 
 .cs-eyebrow {
-  font-size: 11px;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -621,8 +636,9 @@ main {
 }
 
 .cs-title {
-  font-size: 32px;
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: 700;
   letter-spacing: -1.47px;
   line-height: 1.1;
   color: var(--color-graphite);
@@ -631,13 +647,13 @@ main {
 
 @media (min-width: 768px) {
   .cs-title {
-    font-size: 42px;
+    font-size: var(--fs-hero-mobile);
   }
 }
 
 /* Privacy disclaimer */
 .cs-disclaimer {
-  font-size: 12px;
+  font-size: var(--fs-xs);
   line-height: 1.4;
   letter-spacing: 0.5px;
   color: var(--color-light-gray);
@@ -652,7 +668,7 @@ main {
 .cs-overview {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: var(--fs-sm);
   margin-bottom: 28px;
 }
 
@@ -690,18 +706,20 @@ main {
 }
 
 .cs-h1 {
-  font-size: 32px;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
   font-weight: 700;
   letter-spacing: -0.48px;
-  line-height: 1.4;
+  line-height: 1.15;
   color: var(--color-graphite);
   margin-bottom: 20px;
 }
 
 .cs-h2 {
-  font-size: 24px;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.25;
   letter-spacing: -0.36px;
   color: var(--color-graphite);
   margin-top: 40px;
@@ -710,7 +728,7 @@ main {
 
 /* Body text */
 .cs-p {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-slate-blue);
@@ -726,7 +744,7 @@ main {
   border-left: 3px solid var(--color-rocket-red);
   padding: 12px 0 12px 20px;
   margin: 24px 0;
-  font-size: 18px;
+  font-size: var(--fs-lg);
   font-weight: 700;
   line-height: 1.45;
   letter-spacing: -0.2px;
@@ -752,7 +770,7 @@ main {
 }
 
 .cs-img-caption {
-  font-size: 12px;
+  font-size: var(--fs-xs);
   line-height: 1.4;
   letter-spacing: 0.5px;
   color: var(--color-light-gray);
@@ -771,7 +789,7 @@ main {
 }
 
 .cs-insight p {
-  font-size: 18px;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.45;
@@ -810,7 +828,7 @@ main {
 /* Lists */
 .cs-ol,
 .cs-ul {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-slate-blue);
@@ -840,7 +858,7 @@ main {
 /* Inline code */
 .cs-code {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   background: var(--color-ash-gray);
   border: 1px solid var(--color-border-gray);
   border-radius: 4px;
@@ -859,7 +877,7 @@ main {
 .cs-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: var(--fs-sm);
   min-width: 440px;
 }
 
@@ -976,7 +994,7 @@ main {
 }
 
 .cs-more-label {
-  font-size: 11px;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1033,7 +1051,7 @@ main {
 }
 
 .cs-more-card-title {
-  font-size: 16px;
+  font-size: var(--fs-body);
   font-weight: 600;
   letter-spacing: -0.14px;
   line-height: 1.6;
@@ -1044,7 +1062,7 @@ main {
   display: block;
   text-align: center;
   margin-top: 48px;
-  font-size: 14px;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--color-rocket-red);
   text-decoration: underline;
@@ -1064,7 +1082,7 @@ main {
 }
 
 .marquee-heading {
-  font-size: 11px;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
