@@ -119,3 +119,21 @@ document.querySelectorAll('.project-card').forEach((card, i) => {
   overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 }());
+
+// ─── Spotlight ────────────────────────────────────────────────
+(function () {
+  function move(x, y) {
+    document.body.style.setProperty('--sx', x + 'px');
+    document.body.style.setProperty('--sy', y + 'px');
+  }
+
+  document.addEventListener('mousemove', e => move(e.clientX, e.clientY));
+  document.addEventListener('mouseleave', () => move(-300, -300));
+
+  document.addEventListener('touchmove', e => {
+    const t = e.touches[0];
+    move(t.clientX, t.clientY);
+  }, { passive: true });
+
+  document.addEventListener('touchend', () => move(-300, -300));
+}());

@@ -45,8 +45,10 @@
 }
 
 [data-theme="dark"] body {
+  background-color: var(--color-ash-gray);
   background-image:
-    linear-gradient(to bottom, rgba(15,17,23,0) 0%, #0f1117 560px),
+    radial-gradient(circle at var(--sx, -300px) var(--sy, -300px),
+      transparent 0%, transparent 130px, var(--color-ash-gray) 160px),
     radial-gradient(circle, #2E343C 1px, transparent 1px);
 }
 
@@ -77,13 +79,15 @@ body {
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-slate-blue);
-  background-color: var(--color-ash-gray);
+  background-color: var(--color-ghost-white);
   transition: color 0.2s, background-color 0.2s, background-image 0.2s;
   background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 560px),
+    radial-gradient(circle at var(--sx, -300px) var(--sy, -300px),
+      transparent 0%, transparent 130px, var(--color-ghost-white) 160px),
     radial-gradient(circle, #d0d0d0 1px, transparent 1px);
   background-size: 100% 100%, 20px 20px;
   background-repeat: no-repeat, repeat;
+  background-attachment: fixed, fixed;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -94,7 +98,7 @@ a {
 
 strong {
   color: var(--color-graphite);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 img {
@@ -127,7 +131,7 @@ main {
 .section-label {
   font-family: var(--font-heading);
   font-size: var(--fs-h1);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.48px;
   line-height: 1.15;
   color: var(--color-graphite);
@@ -176,7 +180,7 @@ main {
   font-family: var(--font-heading);
   font-size: var(--fs-hero-mobile);
   font-weight: 700;
-  letter-spacing: -1.47px;
+  letter-spacing: -2.5px;
   line-height: 1;
   color: var(--color-graphite);
   margin-bottom: 10px;
