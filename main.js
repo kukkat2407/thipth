@@ -120,6 +120,71 @@ document.querySelectorAll('.project-card').forEach((card, i) => {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 }());
 
+// ─── Case Study Nav ───────────────────────────────────────────
+(function () {
+  const nav = document.querySelector('.cs-nav');
+  if (!nav) return;
+  const h = nav.offsetHeight;
+  document.body.style.paddingTop = h + 'px';
+  document.documentElement.style.scrollPaddingTop = h + 'px';
+}());
+
+// ─── Site Nav ─────────────────────────────────────────────────
+(function () {
+  const nav = document.querySelector('.site-nav');
+  if (!nav) return;
+
+  const tabs = nav.querySelectorAll('.site-nav__tab');
+  const navH = nav.offsetHeight;
+
+  document.body.style.paddingTop = navH + 'px';
+  document.documentElement.style.scrollPaddingTop = navH + 'px';
+
+  function setActive(targetId) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.target === targetId));
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const id = tab.dataset.target;
+      if (id === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  const sectionOrder = ['home', 'featured-works', 'experience', 'contact'];
+  const visibleSet = new Set();
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        visibleSet.add(entry.target.id);
+      } else {
+        visibleSet.delete(entry.target.id);
+      }
+    });
+    const active = sectionOrder.find(id => visibleSet.has(id));
+    if (active) setActive(active);
+  }, { threshold: 0, rootMargin: `-${navH}px 0px -50% 0px` });
+
+  sectionOrder.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) navObserver.observe(el);
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 10) {
+      setActive('home');
+    } else if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 10) {
+      setActive('contact');
+    }
+  }, { passive: true });
+}());
+
 // ─── Spotlight ────────────────────────────────────────────────
 (function () {
   function move(x, y) {

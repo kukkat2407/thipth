@@ -598,20 +598,58 @@ main {
 /* ─── Case Study Pages ───────────────────────────────────── */
 /* ═══════════════════════════════════════════════════════════ */
 
-/* Sticky back-to-home button */
-.cs-back-nav {
-  display: inline-block;
-  margin-bottom: 40px;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  color: var(--color-slate-blue);
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  transition: color 0.15s;
+/* ─── Case study nav bar ──────────────────────────────────── */
+body:has(.cs-nav) {
+  padding-top: 49px;
+  scroll-padding-top: 49px;
 }
 
-.cs-back-nav:hover {
+.cs-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  background: var(--color-ghost-white);
+  border-bottom: 1px solid var(--color-border-gray);
+}
+
+[data-theme="dark"] .cs-nav {
+  background: var(--color-ash-gray);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cs-nav__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  /* align button icon with container content: max-width 824px + padding-left 24px */
+  /* button has 10px internal padding, so offset = container-left - 10px */
+  margin-left: max(14px, calc(50vw - 398px));
+  padding: 0 10px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--color-slate-blue);
+  transition: color 0.15s, background 0.15s;
+}
+
+.cs-nav__back:hover {
   color: var(--color-graphite);
+}
+
+[data-theme="dark"] .cs-nav__back:hover {
+  color: #fff;
+}
+
+/* Old inline back link — hidden now that we have the fixed nav */
+.cs-back-nav {
+  display: none;
 }
 
 /* Hero — full bleed */
@@ -1250,5 +1288,70 @@ main {
   .lightbox-overlay img {
     max-width: 95%;
     max-height: 85vh;
+  }
+}
+
+/* ─── Site Nav ─────────────────────────────────────────────── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 16px 16px;
+  background: var(--color-ash-gray);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .site-nav {
+  background: var(--color-ghost-white);
+  border-bottom: 1px solid var(--color-border-gray);
+}
+
+.site-nav__tab {
+  height: 36px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-slate-blue);
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.18s, font-weight 0.18s;
+  white-space: nowrap;
+}
+
+.site-nav__tab:hover {
+  color: #fff;
+}
+
+[data-theme="light"] .site-nav__tab:hover {
+  color: var(--color-graphite);
+}
+
+.site-nav__tab.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+[data-theme="light"] .site-nav__tab.active {
+  color: var(--color-graphite);
+}
+
+@media (max-width: 480px) {
+  .site-nav {
+    padding: 6px 4px;
+  }
+  .site-nav__tab {
+    font-size: 14px;
+    padding: 0 12px;
+    height: 48px;
   }
 }
