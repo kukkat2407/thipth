@@ -12,7 +12,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redesign Home screen Vikki banking app - Pham Thi Ha Thi</title>
+  <title>Giúp Claude apply đúng design system - Pham Thi Ha Thi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,191 +36,131 @@
       <!-- Project header -->
       <div class="cs-header">
         <a href="./index.html#featured-works" class="cs-back-nav">← Back to home</a>
-        <p class="cs-eyebrow">Side Project · Fintech</p>
-        <h1 class="cs-title">Redesign Home screen Vikki banking app</h1>
+        <p class="cs-eyebrow">Side Project · AI Tools</p>
+        <h1 class="cs-title">Giúp Claude apply đúng design system</h1>
       </div>
 
       <img
         class="cs-hero-img"
-        src="./images/case-study-6/Cover_Vikki.jpg"
-        alt="Redesign Home screen Vikki banking app - cover"
+        src="./images/case-study-7/Cover.jpg"
+        alt="Giúp Claude apply đúng design system - cover"
       >
 
-      <!-- ─── Overview ──────────────────────────────────── -->
+      <!-- ─── Intro ──────────────────────────────────────── -->
       <div class="cs-section">
-        <h2 class="cs-h1">Overview</h2>
-
-        <table class="cs-overview">
-          <tbody>
-            <tr>
-              <th>Project</th>
-              <td>Redesign home screen (Design concept)</td>
-            </tr>
-            <tr>
-              <th>My role</th>
-              <td>Product Designer (Owned end-to-end from research to design solutions)</td>
-            </tr>
-            <tr>
-              <th>Targeted user</th>
-              <td>Gen Z users</td>
-            </tr>
-            <tr>
-              <th>Timeline</th>
-              <td>May 2026</td>
-            </tr>
-          </tbody>
-        </table>
+        <p class="cs-p">Ai đã và đang dùng Claude Code + Figma trong crafting UI chắc chắn sẽ gặp trường hợp Claude Code không apply design system được cung cấp. Một hôm lướt LinkedIn mình đọc được một bài sharing từ bạn <strong><a href="https://www.linkedin.com/in/quadriismail/" target="_blank" rel="noopener">Quadri Ismail</a></strong>, mình đã thử, và nó thành công mọi người ạ. Và đây là cách mình đã làm.</p>
       </div>
 
-      <!-- ─── Problem statement ─────────────────────────── -->
+      <!-- ─── 1. Document token ──────────────────────────── -->
       <div class="cs-section">
-        <h2 class="cs-h1">Problem statement</h2>
-
-        <p class="cs-p">Gen Z users in Ho Chi Minh and Ha Noi are struggling to navigate in Vikki's home screen because the key features such as: money transfer, flight booking, and transport ticketing are buried beneath many marketing and promotion content. This causes users to feel lost, reduces engagement with core financial features.</p>
-
+        <h2 class="cs-h2">Document token, style và component</h2>
+        <ul class="cs-ul">
+          <li>Đây là bước cực kỳ quan trọng. Bạn nên kết hợp Figma AI + Claude để document. Ref đến các design system lớn như Material Design. Trong document nên bao gồm specs, usage và description. Nếu design system của bạn đã được document bài bản và chuyên nghiệp từ trước thì có thể bỏ qua bước này. Bạn cũng có thể nhờ Figma AI review và suggest các điểm cần improve để tăng tính consistent. Điều này theo mình sẽ giúp cho Claude hiểu nhanh hơn ở các step sau.</li>
+        </ul>
         <img
           class="cs-img"
-          src="./images/case-study-6/img-persona.png"
-          alt="User persona - Gen Z Vikki user"
+          src="./images/case-study-7/01_document-tokens.jpg"
+          alt="Document token, style và component trong Figma"
           loading="lazy"
         >
-
-        <blockquote class="cs-blockquote">
-          <em>Gen Z users open Vikki app with a specific task in mind, not to browse. The home screen must be a task launcher first, a financial dashboard second, and a discovery surface third.</em>
-        </blockquote>
-
-        <p class="cs-p">User pain points:</p>
         <ul class="cs-ul">
-          <li>Users cannot quickly locate to features they usually use, such as: bus ticket, flights, top-up data 4G/5G</li>
-          <li>Promotional banners dominate the screen and are irrelevant to Gen Z</li>
-          <li>High information density causes cognitive overload on first view</li>
-          <li>Layout hierarchy does not reflect actual user task priority</li>
-        </ul>
-
-        <p class="cs-p">If we redesign the home screen with a task-first hierarchy and reduced promotional noise, we expect:</p>
-        <ul class="cs-ul">
-          <li>Higher conversion rate on key features</li>
-          <li>Stronger Gen Z acquisition and retention</li>
+          <li>Bạn nên tạo riêng section hoặc frame cho token và component để tiện cho việc lấy shared link.</li>
         </ul>
       </div>
 
-      <!-- ─── Process ───────────────────────────────────── -->
+      <!-- ─── 2. Tạo skill ───────────────────────────────── -->
       <div class="cs-section">
-        <h2 class="cs-h1">Process</h2>
+        <h2 class="cs-h2">Tạo skill trên Claude cho Claude</h2>
+        <ul class="cs-ul">
+          <li>Paste prompt + link Figma vào Claude (dùng prompt từ bài <strong><a href="https://lnkd.in/p/gF4gfQ39" target="_blank" rel="noopener">sharing</a></strong>).</li>
+          <li>Claude dựa trên Figma document bạn cung cấp để đọc hiểu, tìm ra cấu trúc của token và component.</li>
+          <li>Mình yêu cầu Claude lần lượt tạo skill "kukkat-design-tokens" và skill "kukkat-components" (dùng prompt từ bài <strong><a href="https://lnkd.in/p/gF4gfQ39" target="_blank" rel="noopener">sharing</a></strong>).</li>
+        </ul>
 
-        <!-- Research -->
-        <h3 class="cs-h2">Research</h3>
+        <div class="cs-insight">
+          <p><em>❖ Kukkat Design System là bộ design system mình tự build gồm 233 tokens (semantic &amp; primitive colors (Light/Dark theme), spacing, size, corner radius, border, opacity, shadows, text styles, WCAG rules) và 15 components cơ bản, đủ dùng cho project mobile app, team size nhỏ.</em></p>
+        </div>
 
-        <p class="cs-p">Some key insights that were gathered from both user interviews (primary research) and published research reports from the banking and finance market (secondary research) tell us what and how Gen Z users really do in a banking app.</p>
-
+        <ul class="cs-ul">
+          <li>Review kỹ nội dung Skill mà Claude tạo được - AI vẫn có thể sai sót 😂. Với case của mình thì Claude có hiểu sai một số chỗ, nhưng mình có thể chủ động edit lại.</li>
+          <li>Download và install skill vào Claude.</li>
+          <li>Claude gợi ý mình test thử ngay trước khi đưa cho Claude Code. Dù UI design không đạt nhưng lại được apply token, style và component 100% ngay lần test đầu tiên.</li>
+        </ul>
         <img
           class="cs-img"
-          src="./images/case-study-6/img-research.jpg"
-          alt="Research insights - Gen Z banking behavior"
+          src="./images/case-study-7/02_create-skill.jpg"
+          alt="Tạo skill trên Claude cho Claude"
           loading="lazy"
         >
-
-        <p class="cs-p"><em>Note: I applied Claude to accelerate my research stage, including 05 simulated user interviewing, and documenting research outputs.</em></p>
-
-        <!-- Design solution -->
-        <h3 class="cs-h2">Design solution</h3>
-
-        <p class="cs-p"><strong>Design principles</strong></p>
-        <p class="cs-p">Based on the problem statement and research insights, I established 5 principles for the design concept:</p>
-
-        <ol class="cs-ol">
-          <li>Task first, always - critical actions in one tap, above the fold</li>
-          <li>Financial clarity at a glance - balance is the hero, not promotions</li>
-          <li>One consistent design language - unified icons, typeface, color, and spacing</li>
-          <li>Progressive disclosure, complexity revealed by scroll</li>
-          <li>Clear UX writing</li>
-        </ol>
-
-        <p class="cs-p"><strong>Layout hierarchy</strong></p>
-        <p class="cs-p">Over 60% of the current layout is marketing content, which makes the home screen overwhelmed and distracts users, they can not quickly access the core financial features.</br>
-          In the new layout, all core financial features (Zone 2-5) are sorted above the marketing content (Zone 6) that focus on user tasks and reduces promotion banner noise.</p>
-
-        <img
-          class="cs-img"
-          src="./images/case-study-6/img-layout-hierarchy.jpg"
-          alt="Layout hierarchy analysis - before vs after"
-          loading="lazy"
-        >
-
-        <p class="cs-p"><strong>New design concept</strong></p>
-        <p class="cs-p">Back to Gia An, now in the new design concept, she can quick check her account balance, transfer money to her loved coffee shop at school's canteen, even scan QR payment, and topup 4G/5G data.</p>
-
-        <img
-          class="cs-img"
-          src="./images/case-study-6/img-new-design.jpg"
-          alt="New Vikki home screen design concept"
-          loading="lazy"
-        >
-
-        <img
-          class="cs-img"
-          src="./images/case-study-6/img-new-design-annotation-1.jpg"
-          alt="Design annotation 1 - task-first layout"
-          loading="lazy"
-        >
-
-        <p class="cs-p">The personalization optimizes user experience by showing content based on the user segments and behaviors.</p>
-
-        <img
-          class="cs-img"
-          src="./images/case-study-6/img-new-design-annotation-2.jpg"
-          alt="Design annotation 2 - personalization"
-          loading="lazy"
-        >
-
-        <p class="cs-p">Moreover, the new design concept helps users quick overview their finance: total income, total expense, transaction history, saving progress and more.</p>
-
-        <img
-          class="cs-img"
-          src="./images/case-study-6/img-new-design-annotation-3.jpg"
-          alt="Design annotation 3 - financial overview"
-          loading="lazy"
-        >
-
-        <p class="cs-p">The marketing content is less prioritized by moving below the core financial features. Users can also explore more campaigns, promotions, banking services on tab Explore.</p>
-
-        <img
-          class="cs-img"
-          src="./images/case-study-6/img-new-design-annotation-4.jpg"
-          alt="Design annotation 4 - deprioritized marketing content"
-          loading="lazy"
-        >
-
-        <!-- Risk & Trade off -->
-        <h3 class="cs-h2">Risk &amp; Trade off</h3>
-
-        <ol class="cs-ol">
-          <li>The new layout hierarchy with less promotion banners would negatively impact some promotion campaigns adoption. We might consider to build a better method for displaying banners. Measure data before and after carefully.</li>
-          <li>Returning users would take time to adopt new UI. We might have a user onboarding to guide both new and returning users.</li>
-          <li>Personalization would bring better experience for users but it won't fit to all. Focus on the group of primary users but make sure it won't bring bad impact to others.</li>
-        </ol>
       </div>
 
-      <!-- ─── Pre-define next actions ───────────────────── -->
+      <!-- ─── 3. Test trên Claude Code ───────────────────── -->
       <div class="cs-section">
-        <h2 class="cs-h1">Pre-define next actions</h2>
-
-        <ol class="cs-ol">
-          <li>Conduct usability testing on primary users, try to validate design concept, and gather user feedback. A mass survey should be considered to collect quantitative insight.</li>
-          <li>Get back to the team and stakeholders with some research key insights and action items. Enhance the design and review with team. Loop this process until we have the final design ready for development.</li>
-          <li>Run experiment with small % of end-users then watch out the performance. Open for 5% of users then increase to 10 - 50%. Watch out and measure early data (conversion and retention) from end-users.</li>
-          <li>Review the result after 15-30 days of experiment with all stakeholders.</li>
-          <li>Define next items to improve or fix, if needed, before open to 100% of users.</li>
-        </ol>
+        <h2 class="cs-h2">Test trên Claude Code</h2>
+        <ul class="cs-ul">
+          <li>Mình tạo 1 file CLAUDE.md để cung cấp context và yêu cầu Claude Code phải luôn dùng 2 skill đã build. Và note nếu có edge case xảy ra thì xử lý thế nào.</li>
+          <li>Trỏ đến local folder chứa các file markdown.</li>
+          <li>Ở lần thử đầu tiên, Claude Code dùng đúng component, tuy nhiên lại quên apply token và style. Phải đến lần thử thứ 3 thì Claude Code mới hiểu. Trong các lần thử tiếp theo thì đã apply đúng hoàn toàn 👍👍👍</li>
+        </ul>
+        <img
+          class="cs-img"
+          src="./images/case-study-7/03_test-claude-code.jpg"
+          alt="Test trên Claude Code"
+          loading="lazy"
+        >
       </div>
 
-      <!-- Disclaimer -->
-      <p class="cs-disclaimer" style="margin-top: 56px;">✽ ✽ ✽ &nbsp;Some information and data in this case study have been modified for privacy</p>
+      <!-- ─── 4. Những điểm học được ────────────────────── -->
+      <div class="cs-section">
+        <h2 class="cs-h2">Đây là những điểm mình học được</h2>
+        <ul class="cs-ul">
+          <li>Basically, Claude mô tả lại toàn bộ các token, style và component, ghi lại chi tiết specification, đưa ra quy tắc sử dụng (Do-Don't). Bonus thêm checklist để Claude self-review sau khi hoàn thành.</li>
+          <li>Cách này sẽ áp dụng tốt khi bộ design system đã được build chỉn chu và được document đầy đủ.</li>
+          <li>Cần nghĩ cách để update bộ skill khi design token, style hoặc component thay đổi. Solution tạm thời của mình là tạo change log khi có update mới, càng chi tiết càng tốt, để có thông tin update manually ngược vào skill.</li>
+          <li>Sau khi test cả trên Claude và Claude Code thì rõ ràng Claude Code xử lý UI đẹp hơn, có thể do có skill front-end (sẵn có của Anthropic).</li>
+          <li>Claude lại apply đúng và đủ yêu cầu ngay lần thử đầu tiên, mình cực ngạc nhiên về điều này, nhưng chưa sử dụng tốt nested component, Claude Code thì ngược lại.</li>
+          <li>Consider dùng skill "design-tokens" để build component. Vì Claude đã học được công thức ráp token để build component.</li>
+        </ul>
+        <img
+          class="cs-img"
+          src="./images/case-study-7/04_learned-tokens.jpg"
+          alt="Claude apply đúng design token để build component"
+          loading="lazy"
+        >
+        <ul class="cs-ul">
+          <li>Figma file key và node ID là "chìa khoá" để Claude Code mở đúng file - frame - component trên Figma. Node ID ổn định khi rename/move trong cùng file. Nhưng nếu bạn copy component sang file khác thì ID sẽ đổi, cần hạn chế điều này và nếu có thì phải vào file skill để update lại.</li>
+        </ul>
+        <img
+          class="cs-img"
+          src="./images/case-study-7/05_learned-figma-key.jpg"
+          alt="Figma file key và node ID"
+          loading="lazy"
+        >
+      </div>
 
-      <!-- ─── More case studies ──────────────────────────── -->
+      <!-- ─── Closing ────────────────────────────────────── -->
+      <div class="cs-section">
+        <p class="cs-p">Và cảm ơn bạn đã cuộn đến đây ❤️ Hy vọng nó hữu ích và mong nhận thêm góp ý từ mọi người nhé!</p>
+      </div>
+
+      <!-- ─── More case studies ────────────────────────────── -->
       <div class="cs-more">
         <p class="cs-more-label">More case studies</p>
         <div class="cs-more-grid">
+          <a href="./case-study-5.html" class="cs-more-card">
+            <img src="./images/case-study-5/Cover_Article.jpg" alt="Build a simple Wireframe Kit with Claude Code + Figma + Cursor">
+            <div class="cs-more-card-body">
+              <p class="cs-more-card-eyebrow">Side Project · AI Tools</p>
+              <p class="cs-more-card-title">Build a simple Wireframe Kit with Claude Code + Figma + Cursor</p>
+            </div>
+          </a>
+          <a href="./case-study-6.html" class="cs-more-card">
+            <img src="./images/case-study-6/Cover_Vikki.jpg" alt="Redesign Home screen Vikki banking app">
+            <div class="cs-more-card-body">
+              <p class="cs-more-card-eyebrow">Side Project · Fintech</p>
+              <p class="cs-more-card-title">Redesign Home screen Vikki banking app</p>
+            </div>
+          </a>
           <a href="./case-study-1.html" class="cs-more-card">
             <img src="./images/case-study-1/Cover_Search.jpg" alt="Solve user pain points on search &amp; filter tool">
             <div class="cs-more-card-body">
@@ -233,20 +173,6 @@
             <div class="cs-more-card-body">
               <p class="cs-more-card-eyebrow">Case Study · Real Estate</p>
               <p class="cs-more-card-title">Increase user trust on the marketplace</p>
-            </div>
-          </a>
-          <a href="./case-study-7.html" class="cs-more-card">
-            <img src="./images/case-study-7/Cover.jpg" alt="Giúp Claude apply đúng design system">
-            <div class="cs-more-card-body">
-              <p class="cs-more-card-eyebrow">Side Project · AI Tools</p>
-              <p class="cs-more-card-title">Giúp Claude apply đúng design system</p>
-            </div>
-          </a>
-          <a href="./case-study-5.html" class="cs-more-card">
-            <img src="./images/case-study-5/Cover_Article.jpg" alt="Build a simple Wireframe Kit with Claude Code + Figma + Cursor">
-            <div class="cs-more-card-body">
-              <p class="cs-more-card-eyebrow">Side Project · AI Tools</p>
-              <p class="cs-more-card-title">Build a simple Wireframe Kit with Claude Code + Figma + Cursor</p>
             </div>
           </a>
         </div>
