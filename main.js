@@ -185,6 +185,63 @@ document.querySelectorAll('.project-card').forEach((card, i) => {
   }, { passive: true });
 }());
 
+// ─── Statistics count-up ──────────────────────────────────────
+(function () {
+  const values = document.querySelectorAll('.stat-value');
+  if (!values.length) return;
+
+  // Splits "10+" into prefix "", target 10, suffix "+".
+  // Returns null for non-numeric values like "∞" so they're left alone.
+  function parse(raw) {
+    const m = raw.match(/^(\D*?)(\d[\d,.]*)(.*)$/);
+    if (!m) return null;
+    return {
+      prefix: m[1],
+      target: parseFloat(m[2].replace(/,/g, '')),
+      suffix: m[3],
+      decimals: (m[2].split('.')[1] || '').length
+    };
+  }
+
+  const format = (n, p) =>
+    p.prefix + n.toFixed(p.decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + p.suffix;
+
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const items = [];
+  values.forEach(el => {
+    const p = parse(el.textContent.trim());
+    if (!p) return;
+    items.push({ el, p });
+    if (!reduce) el.textContent = format(0, p);
+  });
+
+  if (!items.length || reduce) return;
+
+  function run(el, p) {
+    const dur = 1600;
+    const start = performance.now();
+    (function frame(now) {
+      const t = Math.min((now - start) / dur, 1);
+      el.textContent = format(easeOut(t) * p.target, p);
+      if (t < 1) requestAnimationFrame(frame);
+    })(start);
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const item = items.find(i => i.el === entry.target);
+      if (item) run(item.el, item.p);
+      statObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+
+  items.forEach(i => statObserver.observe(i.el));
+}());
+
 // ─── Spotlight ────────────────────────────────────────────────
 (function () {
   function move(x, y) {

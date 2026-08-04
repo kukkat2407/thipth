@@ -22,29 +22,115 @@
 <body>
 
   <nav class="site-nav" aria-label="Page sections">
-    <button class="site-nav__tab active" data-target="home">Home</button>
-    <button class="site-nav__tab" data-target="featured-works">Featured works</button>
-    <button class="site-nav__tab" data-target="experience">Experience</button>
-    <button class="site-nav__tab" data-target="contact">Contact</button>
+    <div class="site-nav__inner">
+      <a class="site-nav__brand" href="#home">
+        <img class="site-nav__brand-img" src="./images/index/Image_av_logo.jpeg" alt="" aria-hidden="true">
+        <span class="site-nav__brand-name">Thi Pham</span>
+      </a>
+      <div class="site-nav__tabs">
+        <button class="site-nav__tab active" data-target="home">About</button>
+        <button class="site-nav__tab" data-target="featured-works">Featured works</button>
+        <button class="site-nav__tab" data-target="experience">Experience</button>
+        <button class="site-nav__tab" data-target="contact">Contact</button>
+      </div>
+      <a class="site-nav__cta" href="./Thi-Pham-CV.pdf" download>Download CV</a>
+    </div>
   </nav>
 
   <main>
 
-    <div class="container">
+    <div class="container container--wide">
 
       <!-- ─── Hero ─────────────────────────────────────────── -->
       <section class="hero" id="home">
-        <div class="hero-avatar">
-          <img src="./images/index/Image_av.jpeg" alt="Pham Thi Ha Thi">
+        <div class="hero-text">
+          <h1 class="hero-quote">Hi, I'm Thi, a designer builds user-centered web and app experiences. Unlocking better outcomes with AI as a partner.</h1>
+          <p class="hero-meta">
+            <span class="hero-meta__role">Senior Product Designer</span>
+            <span class="hero-meta__sep">·</span>
+            <span class="hero-meta__loc">Ho Chi Minh City, Vietnam</span>
+          </p>
         </div>
-        <h1 class="hero-name">Pham Thi Ha Thi</h1>
-        <p class="hero-role"> Senior Product Designer</p>
-        <blockquote class="hero-tagline">
-          A designer builds user-centered web and app experiences.<br>
-          Unlocking better outcomes with AI as a partner.
-        </blockquote>
-        <p class="hero-bio">Hi, I'm Thi, a designer with 10+ years of experience designing digital products for millions of users in real estate, audiobook, healthtech, fintech, event ticketing, and more.</p>
-        <p class="hero-bio">My core strength is end-to-end ownership from user research to collaborating with cross-functional teams on design solutions, combining product thinking to solve problems that truly matter. I believe good design is not just polished visuals; it must be user-centric, problem-solving, and measurable.</p>
+
+        <div class="hero-media">
+          <img class="hero-photo" src="./images/index/Image_av.jpeg" alt="Pham Thi Ha Thi">
+          <div class="hero-stamp" aria-hidden="true">
+            <svg class="hero-stamp__ring" viewBox="0 0 165 165">
+              <defs>
+                <path id="stamp-path" fill="none"
+                      d="M82.5,82.5 m-63,0 a63,63 0 1,1 126,0 a63,63 0 1,1 -126,0">
+                </path>
+              </defs>
+              <text>
+                <textPath href="#stamp-path" startOffset="0">work smart&#160;&#160;play hard&#160;&#160;</textPath>
+              </text>
+            </svg>
+            <span class="hero-stamp__star">✱</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Logo Marquee ──────────────────────────────────── -->
+      <div class="marquee-section">
+        <p class="marquee-heading">Brands I've worked with</p>
+
+        <div class="marquee-wrap">
+          <div class="marquee-inner">
+            <div class="marquee-group">
+              <img src="./images/index/logos/logo-bds.png"        alt="BDS"          class="marquee-logo">
+              <img src="./images/index/logos/logo-didongviet.png" alt="Di Dong Viet"  class="marquee-logo">
+              <img src="./images/index/logos/logo-fonos.png"      alt="Fonos"         class="marquee-logo">
+              <img src="./images/index/logos/logo-ordoclic.png"   alt="Ordoclic"      class="marquee-logo">
+              <img src="./images/index/logos/logo-passio.png"     alt="Passio"        class="marquee-logo">
+              <img src="./images/index/logos/logo-payoo.png"      alt="Payoo"         class="marquee-logo">
+              <img src="./images/index/logos/logo-ticketbox.png"  alt="Ticketbox"     class="marquee-logo">
+              <img src="./images/index/logos/logo-vietinbank.png" alt="VietinBank"    class="marquee-logo">
+              <img src="./images/index/logos/logo-vpbank.png"     alt="VPBank"        class="marquee-logo">
+            </div>
+            <div class="marquee-group" aria-hidden="true">
+              <img src="./images/index/logos/logo-bds.png"        alt="" class="marquee-logo">
+              <img src="./images/index/logos/logo-didongviet.png" alt="" class="marquee-logo">
+              <img src="./images/index/logos/logo-fonos.png"      alt="" class="marquee-logo">
+              <img src="./images/index/logos/logo-ordoclic.png"   alt="" class="marquee-logo">
+              <img src="./images/index/logos/logo-passio.png"     alt="" class="marquee-logo">
+              <img src="./images/index/logos/logo-payoo.png"      alt="" class="marquee-logo">
+              <img src="./images/index/logos/logo-ticketbox.png"  alt="" class="marquee-logo">
+              <img src="./images/index/logos/logo-vietinbank.png" alt="" class="marquee-logo">
+              <img src="./images/index/logos/logo-vpbank.png"     alt="" class="marquee-logo">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── About me ──────────────────────────────────────── -->
+      <section class="section section--split" id="about">
+        <p class="section-label">About me</p>
+        <div class="about-body">
+          <p class="hero-bio">With over 10 years of experience, I'm so proud of delivering several projects for millions of users in real estate, audiobook, healthtech, fintech, event ticketing, and more.</p>
+          <p class="hero-bio">My core strength is end-to-end ownership from user research to collaborating with cross-functional teams on design solutions, combining product thinking to solve problems that truly matter. I believe good design is not just polished visuals; it must be user-centric, problem-solving, and measurable.</p>
+        </div>
+      </section>
+      
+      <!-- ─── Statistics ────────────────────────────────────── -->
+      <section class="section">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <p class="stat-value">10+</p>
+            <p class="stat-label">Years of experience</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-value">15+</p>
+            <p class="stat-label">Projects delivered</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-value">9</p>
+            <p class="stat-label">Brands worked with</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-value">&#8734;</p>
+            <p class="stat-label">Cups of coffee</p>
+          </div>
+        </div>
       </section>
 
       <!-- ─── Featured Works ────────────────────────────────── -->
@@ -134,7 +220,7 @@
       </section>
 
       <!-- ─── Skills ────────────────────────────────────────── -->
-      <section class="section">
+      <section class="section section--split">
         <p class="section-label">Skills</p>
         <div class="skills-chips">
           <span class="skill-chip">User interface design</span>
@@ -154,7 +240,7 @@
       </section>
 
       <!-- ─── Toolbox ────────────────────────────────────────── -->
-      <section class="section">
+      <section class="section section--split">
         <p class="section-label">Toolbox</p>
         <div class="toolbox-grid">
           <div class="tool-item">
@@ -262,49 +348,8 @@
         </div>
       </section>
 
-      <!-- ─── Logo Marquee ──────────────────────────────────────── -->
-      <div class="marquee-section">
-        <p class="marquee-heading">Brands I've worked with</p>
-        <!-- Row 1: 5 logos -->
-        <div class="marquee-wrap">
-          <div class="marquee-inner">
-            <div class="marquee-group">
-              <img src="./images/index/logos/logo-bds.png"        alt="BDS"          class="marquee-logo">
-              <img src="./images/index/logos/logo-didongviet.png" alt="Di Dong Viet"  class="marquee-logo">
-              <img src="./images/index/logos/logo-fonos.png"      alt="Fonos"         class="marquee-logo">
-              <img src="./images/index/logos/logo-ordoclic.png"   alt="Ordoclic"      class="marquee-logo">
-              <img src="./images/index/logos/logo-passio.png"     alt="Passio"        class="marquee-logo">
-            </div>
-            <div class="marquee-group" aria-hidden="true">
-              <img src="./images/index/logos/logo-bds.png"        alt="" class="marquee-logo">
-              <img src="./images/index/logos/logo-didongviet.png" alt="" class="marquee-logo">
-              <img src="./images/index/logos/logo-fonos.png"      alt="" class="marquee-logo">
-              <img src="./images/index/logos/logo-ordoclic.png"   alt="" class="marquee-logo">
-              <img src="./images/index/logos/logo-passio.png"     alt="" class="marquee-logo">
-            </div>
-          </div>
-        </div>
-        <!-- Row 2: 4 logos -->
-        <div class="marquee-wrap">
-          <div class="marquee-inner marquee-inner--reverse">
-            <div class="marquee-group">
-              <img src="./images/index/logos/logo-payoo.png"      alt="Payoo"         class="marquee-logo">
-              <img src="./images/index/logos/logo-ticketbox.png"  alt="Ticketbox"     class="marquee-logo">
-              <img src="./images/index/logos/logo-vietinbank.png" alt="VietinBank"    class="marquee-logo">
-              <img src="./images/index/logos/logo-vpbank.png"     alt="VPBank"        class="marquee-logo">
-            </div>
-            <div class="marquee-group" aria-hidden="true">
-              <img src="./images/index/logos/logo-payoo.png"      alt="" class="marquee-logo">
-              <img src="./images/index/logos/logo-ticketbox.png"  alt="" class="marquee-logo">
-              <img src="./images/index/logos/logo-vietinbank.png" alt="" class="marquee-logo">
-              <img src="./images/index/logos/logo-vpbank.png"     alt="" class="marquee-logo">
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- ─── Education ──────────────────────────────────────── -->
-      <section class="section">
+      <section class="section section--split">
         <p class="section-label">Education</p>
         <ul class="simple-list">
           <li class="simple-list-item">
@@ -315,7 +360,7 @@
       </section>
 
       <!-- ─── Certificates ───────────────────────────────────── -->
-      <section class="section">
+      <section class="section section--split">
         <p class="section-label">Certification</p>
         <ul class="simple-list">
           <li class="simple-list-item">
@@ -328,7 +373,7 @@
       </section>
 
       <!-- ─── Languages ───────────────────────────────────────── -->
-      <section class="section">
+      <section class="section section--split">
         <p class="section-label">Languages</p>
         <ul class="simple-list">
           <li class="simple-list-item">
@@ -343,7 +388,7 @@
       </section>
 
       <!-- ─── Awards ─────────────────────────────────────────── -->
-      <section class="section">
+      <section class="section section--split">
         <p class="section-label">Awards</p>
         <ul class="simple-list">
           <li class="simple-list-item">
@@ -391,7 +436,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container container--wide">
       <span class="footer-copy">© 2026. Designed in Claude Code &amp; Cursor by Thi Pham.</span>
       <div class="theme-toggle" role="group" aria-label="Color theme">
         <button class="theme-opt" data-theme-val="light">Light</button>

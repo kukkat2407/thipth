@@ -1,5 +1,5 @@
 /* ─── Fonts ──────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@700&display=swap');
 
 /* ─── Tokens ─────────────────────────────────────────────────── */
 :root {
@@ -118,6 +118,12 @@ ul {
   padding: 0 24px;
 }
 
+/* Wider container — index page only. Case study pages stay at 824px
+   so the .cs-nav__back alignment math keeps working. */
+.container--wide {
+  max-width: 1200px;
+}
+
 /* ─── Main ───────────────────────────────────────────────────── */
 main {
   padding-bottom: 72px;
@@ -125,7 +131,19 @@ main {
 
 /* ─── Section ────────────────────────────────────────────────── */
 .section {
-  padding-top: 72px;
+  padding-top: 100px;
+}
+
+/* Two-column sections: label left, content right (desktop only) */
+@media (min-width: 900px) {
+  .section--split {
+    display: grid;
+    grid-template-columns: 332px 1fr;
+    align-items: start;
+  }
+  .section--split > .section-label {
+    margin-bottom: 0;
+  }
 }
 
 .section-label {
@@ -154,58 +172,107 @@ main {
 
 /* ─── Hero ───────────────────────────────────────────────────── */
 .hero {
-  padding-top: 0;
+  padding: 32px 0;
   margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.hero-avatar {
-  width: 128px;
-  height: 128px;
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  margin-bottom: 32px;
-  border: 3px solid var(--color-ghost-white);
-  box-shadow: 0 0 0 1px var(--color-border-gray);
-  position: relative;
-  z-index: 1;
-}
-
-.hero-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-name {
+.hero-quote {
   font-family: var(--font-heading);
-  font-size: var(--fs-hero-mobile);
-  font-weight: 700;
-  letter-spacing: -2.5px;
-  line-height: 1;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -1.2px;
+  line-height: 1.17;
   color: var(--color-graphite);
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   font-feature-settings: "cv06", "cv13";
 }
 
-.hero-role {
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  line-height: 1.6;
+.hero-meta {
+  padding-top: 20px;
+  font-size: var(--fs-body);
+  line-height: 32px;
   letter-spacing: -0.14px;
-  color: var(--color-rocket-red);
-  margin-bottom: 20px;
+  color: #fff;
 }
 
-.hero-tagline {
-  border-left: 3px solid var(--color-graphite);
-  padding-left: 16px;
-  margin: 0 0 24px;
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  font-style: italic;
-  line-height: 1.5;
+[data-theme="light"] .hero-meta {
   color: var(--color-graphite);
-  letter-spacing: -0.36px;
+}
+
+.hero-meta__role {
+  font-weight: 600;
+  color: var(--color-rocket-red);
+}
+
+.hero-meta__loc {
+  font-weight: 600;
+}
+
+.hero-meta__sep {
+  margin: 0 8px;
+}
+
+.hero-media {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 360px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+/* Rotating "work smart · play hard" stamp — straddles the photo's left edge */
+.hero-stamp {
+  position: absolute;
+  left: -8px;
+  bottom: -32px;
+  width: 165px;
+  height: 165px;
+  pointer-events: none;
+}
+
+.hero-stamp__ring {
+  width: 100%;
+  height: 100%;
+  animation: stamp-spin 18s linear infinite;
+}
+
+.hero-stamp__ring text {
+  font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  /* The stamp box is 165px at every breakpoint, so the 165-unit viewBox maps
+     1:1 and this value is the rendered size. */
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  fill: #df2b0c;
+  text-transform: lowercase;
+}
+
+.hero-stamp__star {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+  line-height: 1;
+  color: #df2b0c;
+}
+
+@keyframes stamp-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stamp__ring { animation: none; }
 }
 
 .hero-bio {
@@ -217,6 +284,43 @@ main {
 
 .hero-bio + .hero-bio {
   margin-top: 14px;
+}
+
+.about-body {
+  max-width: 760px;
+}
+
+/* ─── Statistics ─────────────────────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat-item {
+  padding: 24px;
+  border: 1px solid var(--color-border-gray);
+  border-radius: var(--radius-md);
+  background: var(--color-ghost-white);
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  color: var(--color-graphite);
+  margin-bottom: 8px;
+  /* fixed-width digits so the count-up doesn't reflow the card */
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.14px;
+  color: var(--color-slate-blue);
 }
 
 /* ─── Project Cards ──────────────────────────────────────────── */
@@ -339,9 +443,6 @@ main {
   padding: 24px 0;
 }
 
-.experience-item:first-child {
-  border-top: 1px solid var(--color-border-gray);
-}
 
 .experience-period {
   font-size: var(--fs-body);
@@ -399,18 +500,15 @@ main {
 .simple-list-item {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
   padding: 14px 0;
-}
-
-.simple-list-item:first-child {
-  border-top: 1px solid var(--color-border-gray);
+  border-bottom: 1px solid var(--color-border-gray);
 }
 
 .simple-list-name {
-  font-size: var(--fs-body);
+  font-size: var(--fs-lg);
   font-weight: 600;
-  line-height: 1.6;
+  line-height: 30px;
   letter-spacing: -0.14px;
   color: var(--color-graphite);
 }
@@ -554,8 +652,24 @@ main {
 
 /* ─── Desktop ────────────────────────────────────────────────── */
 @media (min-width: 768px) {
-  .hero-name {
-    font-size: var(--fs-hero-desktop);
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 56px;
+  }
+
+  .hero-quote {
+    font-size: 48px;
+    letter-spacing: -2.5px;
+    line-height: 56px;
+  }
+
+  /* Photo and stamp are sized once in the base rules — only the stamp's
+     position differs here, straddling the photo's left edge. */
+  .hero-stamp {
+    left: 0;
+    transform: translateX(calc(-50% - 20px));
   }
 
   .projects-grid {
@@ -574,23 +688,40 @@ main {
   .experience-item {
     display: grid;
     grid-template-columns: 188px 1fr;
-    gap: 40px;
+    gap: 144px;
     align-items: start;
-  }
-
-  .experience-meta {
-    padding-top: 2px;
-    text-align: right;
   }
 
   .experience-period {
     margin-bottom: 0;
   }
 
-  .simple-list-item {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-value {
+    font-size: 48px;
+  }
+}
+
+/* ─── Wide container (index) ─────────────────────────────────── */
+@media (min-width: 1024px) {
+  /* Keep body copy readable at 1200px instead of spanning the full width */
+  .container--wide .hero-bio {
+    max-width: 760px;
+  }
+
+  /* Hero text column matches the Figma 652px measure */
+  .container--wide .hero-text {
+    max-width: 652px;
+  }
+
+  /* The marquee bleeds to the container edges — widen the negative
+     margins to match the 1200px container. */
+  .container--wide .marquee-section {
+    margin-left: -24px;
+    margin-right: -24px;
   }
 }
 
@@ -1118,7 +1249,7 @@ body:has(.cs-nav) {
 
 /* ─── Logo Marquee ───────────────────────────────────────────── */
 .marquee-section {
-  margin: 72px -24px 0;
+  margin: 100px -24px 0;
   padding: 24px 24px 0;
   border-radius: var(--radius-md);
 }
@@ -1298,18 +1429,85 @@ body:has(.cs-nav) {
   left: 0;
   right: 0;
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  padding: 16px 16px;
+  padding: 0 24px;
   background: var(--color-ash-gray);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border-gray);
 }
 
 [data-theme="light"] .site-nav {
   background: var(--color-ghost-white);
   border-bottom: 1px solid var(--color-border-gray);
+}
+
+.site-nav__inner {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Brand — avatar + name */
+.site-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.site-nav__brand-img {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  display: block;
+}
+
+.site-nav__brand-name {
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-slate-blue);
+  white-space: nowrap;
+  transition: color 0.18s;
+}
+
+.site-nav__brand:hover .site-nav__brand-name {
+  color: var(--color-graphite);
+}
+
+.site-nav__tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Download CV button */
+.site-nav__cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-contact-card, #1e2739);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: opacity 0.18s, background 0.18s;
+}
+
+.site-nav__cta:hover {
+  opacity: 0.85;
+}
+
+[data-theme="light"] .site-nav__cta {
+  background: var(--color-graphite);
 }
 
 .site-nav__tab {
@@ -1345,9 +1543,24 @@ body:has(.cs-nav) {
   color: var(--color-graphite);
 }
 
+/* Below this the brand + CTA can't share a row with the tabs, so the nav
+   falls back to centred tabs only (matches the mobile design). */
+@media (max-width: 899px) {
+  .site-nav__brand,
+  .site-nav__cta {
+    display: none;
+  }
+  .site-nav__inner {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 480px) {
   .site-nav {
-    padding: 6px 4px;
+    padding: 0 4px;
+  }
+  .site-nav__inner {
+    padding: 6px 0;
   }
   .site-nav__tab {
     font-size: 14px;
