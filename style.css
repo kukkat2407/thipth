@@ -4,8 +4,8 @@
 /* ─── Tokens ─────────────────────────────────────────────────── */
 :root {
   --color-pitch-black: #000000;
-  --color-ghost-white: #ffffff;
-  --color-ash-gray: #f9fafb;
+  --color-ghost-white: #ffffff;  /* surfaces: cards, chips, nav pills */
+  --color-ash-gray: #f9f9f9;     /* page background */
   --color-graphite: #111827;
   --color-slate-blue: #4b5563;
   --color-light-gray: #6b7280;
@@ -79,11 +79,11 @@ body {
   line-height: 1.6;
   letter-spacing: -0.14px;
   color: var(--color-slate-blue);
-  background-color: var(--color-ghost-white);
+  background-color: var(--color-ash-gray);
   transition: color 0.2s, background-color 0.2s, background-image 0.2s;
   background-image:
     radial-gradient(circle at var(--sx, -300px) var(--sy, -300px),
-      transparent 0%, transparent 130px, var(--color-ghost-white) 160px),
+      transparent 0%, transparent 130px, var(--color-ash-gray) 160px),
     radial-gradient(circle, #d0d0d0 1px, transparent 1px);
   background-size: 100% 100%, 20px 20px;
   background-repeat: no-repeat, repeat;
@@ -744,7 +744,7 @@ body:has(.cs-nav) {
   display: flex;
   align-items: center;
   padding: 16px 0;
-  background: var(--color-ghost-white);
+  background: var(--color-ash-gray);
   border-bottom: 1px solid var(--color-border-gray);
 }
 
@@ -1259,7 +1259,7 @@ body:has(.cs-nav) {
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--color-light-gray);
+  color: var(--color-slate-blue);
   text-align: center;
   margin-top: 0;
   margin-bottom: 4px;
@@ -1435,7 +1435,7 @@ body:has(.cs-nav) {
 }
 
 [data-theme="light"] .site-nav {
-  background: var(--color-ghost-white);
+  background: var(--color-ash-gray);
   border-bottom: 1px solid var(--color-border-gray);
 }
 
@@ -1493,7 +1493,7 @@ body:has(.cs-nav) {
   height: 48px;
   padding: 0 24px;
   border-radius: var(--radius-full);
-  background: var(--color-contact-card, #1e2739);
+  background: var(--color-rocket-red);
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -1507,7 +1507,7 @@ body:has(.cs-nav) {
 }
 
 [data-theme="light"] .site-nav__cta {
-  background: var(--color-graphite);
+  background: var(--color-rocket-red);
 }
 
 .site-nav__tab {
